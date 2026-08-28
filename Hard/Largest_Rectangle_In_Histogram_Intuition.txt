@@ -1,0 +1,33 @@
+Lets Solve LeetCode 84. Largest Rectangle in Histogram
+
+So we are given a bunch of bar heights and each bar height has a width of 1.
+We want to what is the larghest rectangle under it.
+
+So in this case the largest has the area of 10, width = 2 height = 5.
+Another area we could get is 8, width = 4 and height = 2
+Another one has a area of 6, width = 6 height = 1.
+
+So if we just draw the first to bars lets see if we can get some sort of pattern from them.
+So in this case if we extend from 2 we cant go any further. becuase the next is sorter.
+
+But for the next we can extend it back but not furthere. 
+And 1 we can still extend furthere right since its the lowerst.
+
+
+But what would happen if the 1 came before the 2, the opposite scenario.
+In this case the 1 comes before the 2. So we can keep extending it furthere right.
+And the 2 there is nothing coming after it just yet. That will stop us so we can keep
+extending it aswell. 
+
+Another case if we get 2, 2s back 2 back 
+
+Current heights are increasing.
+    ! If they are not in increaseing order, their height will be calculated and they will be popped.
+    
+But what happens if they are all in increasing order, then they can all be
+continuated to the right.
+
+BUT what happens if the last element is very short, well in that case we need to poop
+all elements before it, that are higher since they can no longer can be extended.
+
+These are the boundaries of the higher elements. 
