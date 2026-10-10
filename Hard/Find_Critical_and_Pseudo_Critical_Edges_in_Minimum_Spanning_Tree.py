@@ -1,7 +1,25 @@
 class UnionFind:
-    def __init__(self):
-        pass
+    def __init__(self, nodes: int) -> None:
+        self.parent = [i for i in range(nodes)]
+        self.rank   = [1] * nodes 
 
+    def find(self, v1: int) -> int:
+        while v1 != self.parent[v1]:
+            self.parent[v1] = self.parent[self.parent[v1]]
+            v1 = self.parent[v1]
+        return v1
+
+    def union(self, v1: int, v2: int) -> int:
+        parent_1, parent_2 = self.find(v1), self.find(v2)
+        if parent_1 == parent_2: return False
+        if self.rank[parent_1] > self.rank[parent_2]:
+            self.parent[parent_2] = parent_1
+            self.rank[parent_1] += self.rank[parent_2]
+        else:
+            self.parent[parent_1] = parent_2
+            self.rank[parent_2] += self.rank[parent_1]
+        return True
+    
 class Solution:
     '''
     [Hard Problem]
@@ -20,9 +38,38 @@ class Solution:
     
     '''
 
-    #djikstras algorithm
+    
     def findCriticalAndPseudoCriticalEdges(self, n: int, edges: list[list[int]]) -> list[list[int]]:
-        return #TODO
+        for index, edge in enumerate(edges):
+            edge.append(index)
+        edges.sort(key=lambda edge: edge[2])
+        mst_weight = 0
+        uf = UnionFind(n)
+        for v1, v2, weight, index in edges:
+            if uf.union(v1, v2):
+                mst_weight += weight
+        ciritcal, psudo = [], []
+        for n1, n2, edge_weight, index in edges:
+            weight  = 0
+            uf      = UnionFind(n)
+            for v1, v2, w, j, in edges:
+                if index != j and uf.union(v1, v2):
+                    weight += w 
+            if max(uf.rank) != n or weight > mst_weight:
+                ciritcal.append(index)
+                continue
+            uf = UnionFind(n)
+            uf.union(n1, n2)
+            weight = edge_weight
+            for v1, v2, w, j in edges:
+                if uf.union(v1, v2):
+                    weight += w 
+            if weight == mst_weight:
+                psudo.append(index)
+
+
+
+        return [ciritcal, psudo]
 
 
 if __name__ == "__main__":
