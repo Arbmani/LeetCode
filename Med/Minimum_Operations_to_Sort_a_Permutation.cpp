@@ -1,5 +1,6 @@
 #include <vector>
 #include "iostream"
+#include "algorithm"
 using namespace std;
 
 /**
@@ -24,7 +25,29 @@ If it is not possible to sort the array using only the given operations, return 
 class Solution {
 public:
     int minOperations(vector<int>& nums) {
-        return -1;      
+        int n           = nums.size();
+        int zeroIndex   = 0;
+
+        for(int index = 0; index < n; index++){
+            if (nums[index] == 0){
+                zeroIndex = index;
+                break;
+            }
+        }
+        auto getValue = [&](int k) {
+            return nums[(zeroIndex + k) % n];
+        };
+        bool increasing = true;
+        bool decreasing = true;
+
+
+        for(int k = 0; k < n; k++){
+            if(getValue(k) != k)            increasing = false;
+            if(getValue(k) != ((n - k) % n))  decreasing = false;
+        }
+        if (increasing) return min(zeroIndex, n - zeroIndex + 2);
+        if (decreasing) return min(zeroIndex + 2, n - zeroIndex);
+        return -1;
     }
 };
 
