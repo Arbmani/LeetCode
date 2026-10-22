@@ -1,0 +1,46 @@
+#include <vector>
+#include "iostream"
+using namespace std;
+
+/**
+
+[Medium Problem]
+
+
+You are given an integer array nums of length n, 
+where nums is a permutation of the integers from 0 to n - 1.
+
+You may perform only the following operations:
+
+-   Reverse the entire array.
+
+-   Rotate Left by One: Move the first element to the end of the array, and rest elements to left by one position.
+
+Return an integer denoting the minimum number of operations required to sort the array in increasing order. 
+If it is not possible to sort the array using only the given operations, return -1.
+
+*/
+
+class Solution {
+public:
+    int minOperations(vector<int>& nums) {
+        return -1;      
+    }
+};
+
+
+
+int main(){
+    Solution s;
+
+    vector<int> nums1 = {0,2,1};
+    vector<int> nums2 = {1,0,2};
+    vector<int> nums3 = {2,0,1,3};
+
+    cout << "Want :  2, Was : " << s.minOperations(nums1) << endl;
+    cout << "Want :  2, Was : " << s.minOperations(nums2) << endl;
+    cout << "Want : -1, Was : " << s.minOperations(nums3) << endl;
+
+
+    return -1;
+}
