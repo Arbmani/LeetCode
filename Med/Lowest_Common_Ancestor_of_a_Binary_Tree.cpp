@@ -1,7 +1,4 @@
-#include "iostream"
 #include <cstddef>
-#include <tuple>
-#include <type_traits>
 
 using namespace std;
 
@@ -12,28 +9,16 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+/**
+Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+
+According to the definition of LCA on Wikipedia: 
+“The lowest common ancestor is defined between two nodes p and q 
+as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+*/
+
 class Solution {
 public:
-    //tuple<TreeNode*, bool, bool> dfs(TreeNode* node, TreeNode*p, TreeNode* q){
-    //    if(node == nullptr) return {nullptr, false, false};
-    //    auto tuple_left = dfs(node->left, p, q);
-    //    auto tuple_right = dfs(node->right, p, q);
-    //    bool q_left = get<1>(tuple_left);
-    //    bool p_left = get<2>(tuple_left);
-    //    bool q_right = get<1>(tuple_right);
-    //    bool p_right = get<2>(tuple_right);
-//
-    //    if(q_left && p_left) return tuple_left;
-    //    if(q_right && p_right) return tuple_right;
-    //    bool found_q = q_left || q_right || node == q;
-    //    bool found_p = p_left || p_right || node == p;
-    //    return {node, found_q, found_p};
-    //}
-//
-    //TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-    //    return get<0>(dfs(root, p, q));
-    //}
-
     TreeNode* dfs(TreeNode* node, TreeNode*p, TreeNode*q){
         if(node == nullptr || node == p || node == q) return node;
         TreeNode* left = dfs(node->left, p, q);
