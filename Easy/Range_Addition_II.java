@@ -10,7 +10,7 @@ Count and return the number of maximum integers in the matrix after performing a
 */
 
 
-class Solution {
+class SolutionRange_Addition_II {
     public int maxCount(int m, int n, int[][] ops) {
         if (ops.length == 0) return m * n;
         int minA = m;
@@ -26,7 +26,7 @@ class Solution {
 
 public class Range_Addition_II{
     public static void main(String[] args){
-        Solution s = new Solution();
+        SolutionRange_Addition_II s = new SolutionRange_Addition_II();
 
         int[][] ops1 = {{2, 2}, {3, 3}};
         int[][] ops2 = {{2,2},{2,2},{2,2},{2,2},{2,2},{2,2},{2,2},{2,2},{2,2},{2,2},{2,2},{2,2}};

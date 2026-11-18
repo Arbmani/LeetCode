@@ -9,7 +9,7 @@ You are given an integer array nums representing the data status of this set aft
 Find the number that occurs twice and the number that is missing and return them in the form of an array.
  */
 
-class Solution {
+class Solution_Set_Mismatch {
     public int[] findErrorNums(int [] nums) {
         int xor = 0;
         int n   = nums.length;
@@ -33,7 +33,7 @@ class Solution {
     }
 }
 
-class Solution_bad {
+class Solution_badSolution_Set_Mismatch {
     public int[] findErrorNums(int[] nums) {
         int n = nums.length;
         int [] count = new int[n + 1];
@@ -55,7 +55,7 @@ class Solution_bad {
 
 public class Set_Mismatch {
     public static void main(String[] args){
-        Solution s = new Solution();
+        Solution_Set_Mismatch s = new Solution_Set_Mismatch();
 
         System.out.println("\nWant : [2, 3]\nWas  : " + java.util.Arrays.toString(s.findErrorNums(new int[]{1,2,2,4})));
         System.out.println("\nWant : [1, 2]\nWas  : " + java.util.Arrays.toString(s.findErrorNums(new int[]{1, 1})));

@@ -9,7 +9,7 @@ value and return this value. Any answer with a calculation error less than 10^-5
 */
 
 
-class Solution {
+class SolutionMaximum_Average_Subarray_I {
     public double findMaxAverage(int[] nums, int k) {
         int sum     = 0;
         int maxSum  = Integer.MIN_VALUE;
@@ -26,7 +26,7 @@ class Solution {
 
 public class Maximum_Average_Subarray_I{
     public static void main(String[] args){
-        Solution s = new Solution();
+        SolutionMaximum_Average_Subarray_I s = new SolutionMaximum_Average_Subarray_I();
 
         int [] nums1 = {1,12,-5,-6,50,3};
         int [] nums2 = {5};
