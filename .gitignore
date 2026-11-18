@@ -1,7 +1,13 @@
-
 a.out
 main
 *.exe
 *.o
 *.obj
+*.class
+*.jar
+*.war
+*.ear
 build/
+out/
+target/
+bin/
