@@ -7,7 +7,7 @@ that a * b = c * d where a, b, c, and d are elements of nums, and a != b != c !=
 
 */
 
-class Solution {
+class SolutionTuple_with_Same_Product {
     public int tupleSameProduct(int[] nums) {
         Map<Integer, Integer> productCount = new HashMap<>();
         int count = 0;
@@ -24,7 +24,7 @@ class Solution {
 
 public class Tuple_with_Same_Product {
     public static void main(String[] args) {
-        Solution s = new Solution();
+        SolutionTuple_with_Same_Product s = new SolutionTuple_with_Same_Product();
         int []nums1 = {2,3,4,6};
         int []nums2 = {1,2,4,5,10};
 
