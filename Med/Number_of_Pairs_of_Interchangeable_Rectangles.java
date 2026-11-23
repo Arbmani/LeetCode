@@ -13,7 +13,7 @@ Return the number of pairs of interchangeable rectangles in rectangles.
 
 */
 
-class Solution {
+class SolutionNumber_of_Pairs_of_Interchangeable_Rectangles {
     private int gcd(int Anum, int Bnum){
         while (Bnum != 0){
             int temp = Bnum;
@@ -47,7 +47,7 @@ public class Number_of_Pairs_of_Interchangeable_Rectangles{
     public static void main(String[] args) {
         int [][] rectangles1 = {{4, 8}, {3, 6}, {10, 20}, {15, 30}};
         int [][] rectangles2 = {{4, 5}, {7, 8}};
-        Solution s = new Solution();
+        SolutionNumber_of_Pairs_of_Interchangeable_Rectangles s = new SolutionNumber_of_Pairs_of_Interchangeable_Rectangles();
         System.out.println("\nWant : 6\nWas  : " + s.interchangeableRectangles(rectangles1));
         System.out.println("\nWant : 0\nWas  : " + s.interchangeableRectangles(rectangles2));
     }
