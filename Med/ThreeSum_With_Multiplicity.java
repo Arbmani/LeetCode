@@ -10,7 +10,7 @@ As the answer can be very large, return it modulo 109 + 7.
 
 */
 
-class Solution {
+class SolutionThreeSum_With_Multiplicity {
     public int threeSumMulti(int[] arr, int target) {
         final int mod = 1_000_000_007;
         Map<Integer, Long> pairs = new HashMap<>();
@@ -28,7 +28,7 @@ class Solution {
 
 public class ThreeSum_With_Multiplicity {
     public static void main(String[] args){
-        Solution s = new Solution();
+        SolutionThreeSum_With_Multiplicity s = new SolutionThreeSum_With_Multiplicity();
         int []arr1 = {1,1,2,2,3,3,4,4,5,5};
         int []arr2 = {1,1,2,2,2,2};
         int []arr3 = {2,1,3};
