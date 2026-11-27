@@ -25,7 +25,7 @@ Notice that |val| denotes the absolute value of val.
 
 */
 
-class Solution {
+class SolutionK_diff_Pairs_in_an_Array {
     public int findPairs(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int count = 0;
@@ -44,7 +44,7 @@ class Solution {
 
 public class K_diff_Pairs_in_an_Array {
     public static void main(String[] args) {
-        Solution s = new Solution();
+        SolutionK_diff_Pairs_in_an_Array s = new SolutionK_diff_Pairs_in_an_Array();
         int [] nums1  = {3,1,4,1,5}; 
         int [] nums2  = {1,2,3,4,5}; 
         int [] nums3  = {1,3,1,5,4}; 
